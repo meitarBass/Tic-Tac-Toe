@@ -10,22 +10,14 @@ import UIKit
 
 class GameController: UIViewController {
     
-    var winningCombinations = [[0,1,2] ,[3,4,5], [6,7,8], [0,4,8], [3,4,6], [0,3,6], [1,4,7], [2,5,8]]
-    var currentBoard = [["x","o","x"],["x","o","o"],["o","x","x"]] //
-    var whoseTurn = 1 // Player 1 turn
+    var currentBoard: [[Shape]] = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
+    
+    var playingShape: Shape = .X // Player 1 turn
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        print(getResult(board: currentBoard))
+    
     }
-    
-    
-    func checkIfWon() {
-        
-    }
-    
     
     
     // MARK: Segues and transition between controllers
@@ -39,7 +31,40 @@ class GameController: UIViewController {
     }
     
     @IBAction func boardTapped(_ sender: UIButton) {
-        print(sender.tag)
+        var playedIndex = (-1,-1)
+            switch sender.tag {
+            case 1:
+                playedIndex = (0,0)
+            case 2:
+                playedIndex = (0,1)
+            case 3:
+                playedIndex = (0,2)
+            case 4:
+                playedIndex = (1,0)
+            case 5:
+                playedIndex = (1,1)
+            case 6:
+                playedIndex = (1,2)
+            case 7:
+                playedIndex = (2,0)
+            case 8:
+                playedIndex = (2,1)
+            case 9:
+                playedIndex = (2,2)
+            default:break
+        }
+        
+        if currentBoard[playedIndex.0][playedIndex.1] != .E {
+            currentBoard[playedIndex.0][playedIndex.1] = playingShape
+            switch getState(board: currentBoard, playerShape: playingShape) {
+            case .PLAYING_USER_WON:
+                gameDone()
+            case .TIE:
+                gameDone()
+            case .INCOMPLETE: break
+            }
+        }
+        
     }
     
     

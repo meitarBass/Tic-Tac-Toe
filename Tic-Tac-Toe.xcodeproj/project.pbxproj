@@ -23,6 +23,7 @@
 		A960E0672343413B00261FC6 /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960E0662343413B00261FC6 /* Computer.swift */; };
 		A960E069234341F000261FC6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960E068234341F000261FC6 /* Player.swift */; };
 		A960E06B2343420600261FC6 /* GameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960E06A2343420600261FC6 /* GameFunctions.swift */; };
+		A960E06D2343AA7C00261FC6 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960E06C2343AA7C00261FC6 /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A960E0662343413B00261FC6 /* Computer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Computer.swift; sourceTree = "<group>"; };
 		A960E068234341F000261FC6 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A960E06A2343420600261FC6 /* GameFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFunctions.swift; sourceTree = "<group>"; };
+		A960E06C2343AA7C00261FC6 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A960E0662343413B00261FC6 /* Computer.swift */,
 				A960E068234341F000261FC6 /* Player.swift */,
 				A960E06A2343420600261FC6 /* GameFunctions.swift */,
+				A960E06C2343AA7C00261FC6 /* enums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				A960E0412342730600261FC6 /* AppDelegate.swift in Sources */,
 				A960E069234341F000261FC6 /* Player.swift in Sources */,
 				A960E05D2343035C00261FC6 /* CustomButton.swift in Sources */,
+				A960E06D2343AA7C00261FC6 /* enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

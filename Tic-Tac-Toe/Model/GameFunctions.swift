@@ -9,57 +9,117 @@
 import Foundation
 
 // Check board state
-// Get board (2 dimension array)
-// return 1 of 4 option: (enum)
-// Incomplete - 3
-// Player 1 won - 1
-// Player 2 won - 2
-// Tie - 4
+// E = Empty
 
-func getResult(board: [[String]]) -> Int {
+// var winningCombinations = [[0,1,2] ,[3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [3,4,6]]
+func getState(board: [[Shape]], playerShape: Shape) -> GameState {
+    
+    // Check for win in a row or column
     for i in 0...2 {
-        if (board[i][0] != "" && board[i][0] == board[i][1] && board[i][1] == board[i][2]) || board[0][i] != "" && board[0][i] == board[1][i] && board[1][i] == board[2][i] {
-            let playerTurn = checkWhoseTurn()
-            switch playerTurn {
-                // Covered all the options, need to use enum instead of Int
-                case 1:
-                    return 1
-                case 2:
-                    return 2
-            default:
-                return 0
-            }
+        if (board[i][0] != .E && board[i][0] == board[i][1] && board[i][1] == board[i][2]) || (board[0][i] != .E && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+            return .PLAYING_USER_WON
         }
     }
     
+    // Check for win in alahson
+    if board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != .E || board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != .E {
+        return .PLAYING_USER_WON
+    }
+    
+    
+    // Check for tie
     var countPieces = 0
     for row in board {
         for col in row {
-            if col != "" {
+            if col != .E {
                 countPieces = countPieces + 1
             }
         }
     }
     
     if countPieces < 9 {
-        return 3
+        return .INCOMPLETE
     }
-    return 4
-}
-
-func checkWhoseTurn() -> Int {
-    return 1
-}
-
-
-// Check best play
-// Grade all moves
-// 1 - You Win
-// 0 - Not good or bad so pick random
-// -1 - You Lose
-
-func checkBestPlay() {
     
+    // Check for none of the above
+    return .TIE
+}
+
+
+// MARK: Check best play
+
+// Grade all moves
+// 1 - Computer Win
+// 0 - Not good or bad so pick random
+// -1 - Computer Lose
+// -2 - Spot taken
+
+func checkBestPlay(board: [[Shape]], shape: Shape) -> (Int, Int) {
+    
+    // The chosen index
+    var highIndex = (0, 0)
+    
+    // Timed variables
+    var timeBoard = board
+    var timedShape = shape
+    
+    // Array for storing the score of each spot
+    var scoreArray = [[-2,-2,-2],[-2,-2,-2],[-2,-2,-2]]
+    
+    for (indexR,row) in board.enumerated() {
+        for (indexC,col) in row.enumerated() {
+            if col == .E {
+                // Check if the computer can win
+                timeBoard[indexR][indexC] = timedShape
+                switch getState(board: timeBoard, playerShape: timedShape) {
+                    case .PLAYING_USER_WON:
+                        scoreArray[indexR][indexC] = 1
+                    case .INCOMPLETE, .TIE:
+                        if scoreArray[indexR][indexC] != -1 {
+                            scoreArray[indexR][indexC] = 0
+                        }
+                }
+                
+                // Change shape
+                if shape == .O {
+                    timedShape = .X
+                } else {
+                    timedShape = .O
+                }
+                
+                // Check if the opponent can win
+                timeBoard[indexR][indexC] = timedShape
+                switch getState(board: timeBoard, playerShape: timedShape) {
+                    case .PLAYING_USER_WON:
+                        if scoreArray[indexR][indexC] != 1 {
+                            scoreArray[indexR][indexC] = -1
+                        }
+                    case .INCOMPLETE, .TIE: break
+                }
+                
+                timedShape = shape
+                timeBoard[indexR][indexC] = .E
+            }
+        }
+       
+    }
+    
+    // Return the chosen index for the computer's turn
+    // Checking for the best index, 1 is the best, then -1 (block opponent), and least is 0, -2 = can't play
+    for (indexR, row) in scoreArray.enumerated() {
+        for (indexC, col) in row.enumerated() {
+            if col == 1 {
+                highIndex = (indexR, indexC)
+                return highIndex
+            } else if col == -1 {
+                highIndex = (indexR, indexC)
+            } else if col == 0 && scoreArray[highIndex.0][highIndex.1] != -1 {
+                highIndex = (indexR, indexC)
+            }
+        }
+    }
+    
+    return highIndex
 }
 
 
