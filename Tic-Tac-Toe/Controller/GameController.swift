@@ -10,6 +10,9 @@ import UIKit
 
 class GameController: UIViewController {
     
+    // Views with tap gesture instead of buttons?
+    
+    @IBOutlet var boardButtonsCollection: [UIButton]!
     var currentBoard: [[Shape]] = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
     
     var playingShape: Shape = .X // Player 1 turn
@@ -19,6 +22,24 @@ class GameController: UIViewController {
     
     }
     
+    
+    // MARK: Computer Play
+    
+    func playComputer(playingShape: Shape) {
+        let bestPlay = checkBestPlay(board: currentBoard, shape: playingShape)
+        let buttonIndex = bestPlay.0 * 3 + bestPlay.1
+        
+        // Repeating this part in the player play also, need to make it a function
+        currentBoard[bestPlay.0][bestPlay.1] = playingShape
+        boardButtonsCollection[buttonIndex].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
+        switch getState(board: currentBoard, playerShape: playingShape) {
+        case .PLAYING_USER_WON:
+            gameDone()
+        case .TIE:
+            gameDone()
+        case .INCOMPLETE: break
+        }
+    }
     
     // MARK: Segues and transition between controllers
     @IBAction func ExitButtonTapped(_ sender: UIButton) {
@@ -31,6 +52,8 @@ class GameController: UIViewController {
     }
     
     @IBAction func boardTapped(_ sender: UIButton) {
+        // Might have a shorter way to convert it!
+        // Probably something like x % 3 = a, y = x / a
         var playedIndex = (-1,-1)
             switch sender.tag {
             case 1:
@@ -54,8 +77,9 @@ class GameController: UIViewController {
             default:break
         }
         
-        if currentBoard[playedIndex.0][playedIndex.1] != .E {
+        if currentBoard[playedIndex.0][playedIndex.1] == .E {
             currentBoard[playedIndex.0][playedIndex.1] = playingShape
+            boardButtonsCollection[sender.tag - 1].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
             switch getState(board: currentBoard, playerShape: playingShape) {
             case .PLAYING_USER_WON:
                 gameDone()
@@ -64,6 +88,8 @@ class GameController: UIViewController {
             case .INCOMPLETE: break
             }
         }
+        
+        playComputer(playingShape: .O)
         
     }
     
