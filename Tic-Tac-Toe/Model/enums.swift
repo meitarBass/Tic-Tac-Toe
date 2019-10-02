@@ -19,3 +19,9 @@ enum Shape: String {
     case O = "o"
     case E = ""
 }
+
+enum WINNER: Int {
+    case PLAYER_1 = 1
+    case PLAYER_2 = 2
+    case TIE = 3
+}

@@ -669,13 +669,13 @@
                                 <rect key="frame" x="60" y="84" width="294" height="738"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXG-gg-tT6">
-                                        <rect key="frame" x="26.5" y="0.0" width="241.5" height="44.5"/>
+                                        <rect key="frame" x="40.5" y="0.0" width="213.5" height="43"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-user-blue" translatesAutoresizingMaskIntoConstraints="NO" id="40l-aB-KS9">
-                                        <rect key="frame" x="0.0" y="119.5" width="294" height="393.5"/>
+                                        <rect key="frame" x="0.0" y="118" width="294" height="395"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gGJ-q2-wJI">
                                         <rect key="frame" x="23" y="588" width="248" height="150"/>
@@ -730,6 +730,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pwO-aK-rZw"/>
                     </view>
+                    <connections>
+                        <outlet property="winnerImage" destination="40l-aB-KS9" id="sUE-Ij-Qne"/>
+                        <outlet property="winnerLabel" destination="GXG-gg-tT6" id="GCL-U7-hxo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPW-k0-bwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="H4h-ZN-b5A" userLabel="Exit" sceneMemberID="exit"/>

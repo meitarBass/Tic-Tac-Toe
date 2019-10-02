@@ -16,6 +16,7 @@ class GameController: UIViewController {
     var currentBoard: [[Shape]] = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
     
     var playingShape: Shape = .X // Player 1 turn
+    var winner: WINNER!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,10 @@ class GameController: UIViewController {
         boardButtonsCollection[buttonIndex].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
         switch getState(board: currentBoard, playerShape: playingShape) {
         case .PLAYING_USER_WON:
+            winner = .PLAYER_2
             gameDone()
         case .TIE:
+            winner = .TIE
             gameDone()
         case .INCOMPLETE: break
         }
@@ -82,8 +85,10 @@ class GameController: UIViewController {
             boardButtonsCollection[sender.tag - 1].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
             switch getState(board: currentBoard, playerShape: playingShape) {
             case .PLAYING_USER_WON:
+                winner = .PLAYER_1
                 gameDone()
             case .TIE:
+                winner = .TIE
                 gameDone()
             case .INCOMPLETE: break
             }
@@ -100,6 +105,11 @@ class GameController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Detect who won
+        if segue.destination is GameOverController {
+            let gameOverController = segue.destination as? GameOverController
+            gameOverController?.winner = winner
+        }
+        
     }
 
 
