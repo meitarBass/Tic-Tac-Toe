@@ -16,6 +16,18 @@ class CustomView: UIView {
         }
     }
     
+    @IBInspectable var hasShadow: Bool = false {
+        didSet {
+            layer.shadowPath =
+                UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+            layer.shadowColor = #colorLiteral(red: 0.9607843137, green: 0.6509803922, blue: 0.137254902, alpha: 1)
+            layer.shadowOpacity = 0.9
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+            layer.shadowRadius = 4
+            layer.masksToBounds = false
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         clipsToBounds = true

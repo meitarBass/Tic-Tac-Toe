@@ -16,12 +16,14 @@ class GameController: UIViewController {
     @IBOutlet var boardImageCollection: [UIImageView]!
     var currentBoard: [[Shape]] = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
     
+    @IBOutlet weak var leftIndicator: CustomView!
+    @IBOutlet weak var rightIndicator: CustomView!
     var playingShape: Shape = .X // Player 1 turn
     var winner: WINNER = .NONE
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +71,8 @@ class GameController: UIViewController {
             currentBoard[playedIndex.0][playedIndex.1] = playingShape
             // boardButtonsCollection[sender.tag - 1].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
             boardImageCollection[sender.tag - 1].image = UIImage(named: playingShape.rawValue.capitalized)
+            leftIndicator.layer.shadowOpacity = 0.0
+            rightIndicator.layer.shadowOpacity = 0.9
             switch getState(board: currentBoard, playerShape: playingShape) {
             case .PLAYING_USER_WON:
                 winner = .PLAYER_1
@@ -79,6 +83,8 @@ class GameController: UIViewController {
             case .INCOMPLETE:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     self.playComputer(playingShape: .O)
+                    self.leftIndicator.layer.shadowOpacity = 0.9
+                    self.rightIndicator.layer.shadowOpacity = 0.0
                 }
             }
         }
@@ -103,6 +109,8 @@ class GameController: UIViewController {
         currentBoard = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
         playingShape = .X
         winner = .NONE
+        leftIndicator.layer.shadowOpacity = 0.9
+        rightIndicator.layer.shadowOpacity = 0.0
         for image in boardImageCollection {
             image.image = UIImage(named: "")
         }

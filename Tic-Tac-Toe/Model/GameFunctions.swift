@@ -105,6 +105,10 @@ func checkBestPlay(board: [[Shape]], shape: Shape) -> (Int, Int) {
     
     // Return the chosen index for the computer's turn
     // Checking for the best index, 1 is the best, then -1 (block opponent), and least is 0, -2 = can't play
+    
+    // Array for generating random index
+    var bestIndexArray = [(Int, Int)]()
+    
     for (indexR, row) in scoreArray.enumerated() {
         for (indexC, col) in row.enumerated() {
             if col == 1 {
@@ -114,6 +118,10 @@ func checkBestPlay(board: [[Shape]], shape: Shape) -> (Int, Int) {
                 highIndex = (indexR, indexC)
             } else if col == 0 && scoreArray[highIndex.0][highIndex.1] != -1 {
                 highIndex = (indexR, indexC)
+                bestIndexArray.append(highIndex)
+                // generating random index to be picked
+                let randomIndex = Int.random(in: 0..<bestIndexArray.count)
+                highIndex = bestIndexArray[randomIndex]
             }
         }
     }

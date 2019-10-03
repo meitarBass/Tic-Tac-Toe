@@ -215,28 +215,29 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwL-U6-Qtm" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-fB-IUg" userLabel="Left Indicator" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="46" width="148.5" height="5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="5" id="iAe-uG-Bga"/>
+                                                    <constraint firstAttribute="height" constant="5" id="5hT-gD-LDS"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="VwL-U6-Qtm" firstAttribute="top" secondItem="9Sk-tO-wRo" secondAttribute="bottom" constant="15" id="8PH-hf-6mv"/>
                                             <constraint firstItem="9Sk-tO-wRo" firstAttribute="leading" secondItem="FuQ-Of-bbh" secondAttribute="leading" constant="8" id="Fz6-Ss-qYv"/>
-                                            <constraint firstAttribute="trailing" secondItem="VwL-U6-Qtm" secondAttribute="trailing" constant="8" id="JUX-dv-zCs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hc6-fB-IUg" secondAttribute="trailing" constant="8" id="PSo-0P-jWB"/>
+                                            <constraint firstItem="Hc6-fB-IUg" firstAttribute="leading" secondItem="FuQ-Of-bbh" secondAttribute="leading" constant="8" id="Rdw-CH-G4C"/>
                                             <constraint firstAttribute="trailing" secondItem="Lv2-Zz-t7s" secondAttribute="trailing" constant="12" id="V2C-o9-eUe"/>
                                             <constraint firstItem="Lv2-Zz-t7s" firstAttribute="top" secondItem="FuQ-Of-bbh" secondAttribute="top" constant="8" id="WDl-Um-qH9"/>
                                             <constraint firstItem="Lv2-Zz-t7s" firstAttribute="leading" secondItem="9Sk-tO-wRo" secondAttribute="trailing" constant="12" id="cuk-qm-eC4"/>
-                                            <constraint firstItem="VwL-U6-Qtm" firstAttribute="leading" secondItem="FuQ-Of-bbh" secondAttribute="leading" constant="8" id="jXw-cY-6Ii"/>
+                                            <constraint firstItem="Hc6-fB-IUg" firstAttribute="top" secondItem="9Sk-tO-wRo" secondAttribute="bottom" constant="15" id="jns-aq-8QU"/>
                                             <constraint firstItem="9Sk-tO-wRo" firstAttribute="top" secondItem="FuQ-Of-bbh" secondAttribute="top" constant="4" id="xSd-qr-GuV"/>
                                         </constraints>
                                     </view>
@@ -256,12 +257,18 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-bq-O3m">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-bq-O3m" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="46" width="148.5" height="5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="8WC-ib-hRe"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,6 +684,8 @@
                         <viewLayoutGuide key="safeArea" id="I0E-1c-ieD"/>
                     </view>
                     <connections>
+                        <outlet property="leftIndicator" destination="Hc6-fB-IUg" id="UrS-Xe-c8t"/>
+                        <outlet property="rightIndicator" destination="HBk-bq-O3m" id="VTJ-gz-lde"/>
                         <outletCollection property="boardImageCollection" destination="t7F-2J-Kj1" collectionClass="NSMutableArray" id="oVH-Wx-iLd"/>
                         <outletCollection property="boardImageCollection" destination="77H-f8-XVF" collectionClass="NSMutableArray" id="tng-OO-hjy"/>
                         <outletCollection property="boardImageCollection" destination="Ix9-W2-pg2" collectionClass="NSMutableArray" id="mfq-7a-XOR"/>
