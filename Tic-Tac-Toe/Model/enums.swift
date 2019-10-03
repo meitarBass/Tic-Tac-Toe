@@ -24,4 +24,5 @@ enum WINNER: Int {
     case PLAYER_1 = 1
     case PLAYER_2 = 2
     case TIE = 3
+    case NONE = 4
 }

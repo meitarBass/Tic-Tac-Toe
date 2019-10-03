@@ -19,8 +19,7 @@ class CustomView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         clipsToBounds = true
-        layer.cornerRadius = 10
-        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        // layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
     }
     

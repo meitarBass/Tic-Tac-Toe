@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Credits icon should go a little bit down
 
     override func viewDidLoad() {
         super.viewDidLoad()

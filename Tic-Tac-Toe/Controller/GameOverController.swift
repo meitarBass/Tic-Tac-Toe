@@ -31,6 +31,7 @@ class GameOverController: UIViewController {
                 case .TIE:
                     winnerLabel.text = "Tie"
                     winnerImage.image = UIImage(named: "draw-icon")
+                default: break
             }
         }
     }

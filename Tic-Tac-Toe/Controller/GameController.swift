@@ -12,27 +12,32 @@ class GameController: UIViewController {
     
     // Views with tap gesture instead of buttons?
     
-    @IBOutlet var boardButtonsCollection: [UIButton]!
+    // @IBOutlet var boardButtonsCollection: [UIButton]!
+    @IBOutlet var boardImageCollection: [UIImageView]!
     var currentBoard: [[Shape]] = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
     
     var playingShape: Shape = .X // Player 1 turn
-    var winner: WINNER!
+    var winner: WINNER = .NONE
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+                
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reset()
+    }
     
     // MARK: Computer Play
     
     func playComputer(playingShape: Shape) {
         let bestPlay = checkBestPlay(board: currentBoard, shape: playingShape)
-        let buttonIndex = bestPlay.0 * 3 + bestPlay.1
+        let imageIndex = bestPlay.0 * 3 + bestPlay.1
         
         // Repeating this part in the player play also, need to make it a function
         currentBoard[bestPlay.0][bestPlay.1] = playingShape
-        boardButtonsCollection[buttonIndex].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
+       // boardButtonsCollection[buttonIndex].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
+        boardImageCollection[imageIndex].image = UIImage(named: playingShape.rawValue.capitalized)
         switch getState(board: currentBoard, playerShape: playingShape) {
         case .PLAYING_USER_WON:
             winner = .PLAYER_2
@@ -55,34 +60,15 @@ class GameController: UIViewController {
     }
     
     @IBAction func boardTapped(_ sender: UIButton) {
-        // Might have a shorter way to convert it!
-        // Probably something like x % 3 = a, y = x / a
         var playedIndex = (-1,-1)
-            switch sender.tag {
-            case 1:
-                playedIndex = (0,0)
-            case 2:
-                playedIndex = (0,1)
-            case 3:
-                playedIndex = (0,2)
-            case 4:
-                playedIndex = (1,0)
-            case 5:
-                playedIndex = (1,1)
-            case 6:
-                playedIndex = (1,2)
-            case 7:
-                playedIndex = (2,0)
-            case 8:
-                playedIndex = (2,1)
-            case 9:
-                playedIndex = (2,2)
-            default:break
-        }
+        playedIndex.0 = (sender.tag - 1) / 3
+        playedIndex.1 = (sender.tag - 1) % 3
+
         
         if currentBoard[playedIndex.0][playedIndex.1] == .E {
             currentBoard[playedIndex.0][playedIndex.1] = playingShape
-            boardButtonsCollection[sender.tag - 1].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
+            // boardButtonsCollection[sender.tag - 1].setImage(UIImage(named: playingShape.rawValue.capitalized), for: .normal)
+            boardImageCollection[sender.tag - 1].image = UIImage(named: playingShape.rawValue.capitalized)
             switch getState(board: currentBoard, playerShape: playingShape) {
             case .PLAYING_USER_WON:
                 winner = .PLAYER_1
@@ -90,12 +76,13 @@ class GameController: UIViewController {
             case .TIE:
                 winner = .TIE
                 gameDone()
-            case .INCOMPLETE: break
+            case .INCOMPLETE:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    self.playComputer(playingShape: .O)
+                }
             }
         }
-        
-        playComputer(playingShape: .O)
-        
+    
     }
     
     
@@ -110,6 +97,15 @@ class GameController: UIViewController {
             gameOverController?.winner = winner
         }
         
+    }
+    
+    func reset() {
+        currentBoard = [[.E, .E, .E],[.E, .E, .E],[.E, .E, .E]]
+        playingShape = .X
+        winner = .NONE
+        for image in boardImageCollection {
+            image.image = UIImage(named: "")
+        }
     }
 
 

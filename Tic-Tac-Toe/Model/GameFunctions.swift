@@ -11,7 +11,6 @@ import Foundation
 // Check board state
 // E = Empty
 
-// var winningCombinations = [[0,1,2] ,[3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [3,4,6]]
 func getState(board: [[Shape]], playerShape: Shape) -> GameState {
     
     // Check for win in a row or column
@@ -121,6 +120,3 @@ func checkBestPlay(board: [[Shape]], shape: Shape) -> (Int, Int) {
     
     return highIndex
 }
-
-
-
