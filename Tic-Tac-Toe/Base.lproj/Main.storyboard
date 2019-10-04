@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,13 +26,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rew-Cx-s4R">
-                                <rect key="frame" x="369" y="52" width="25" height="25"/>
+                                <rect key="frame" x="280" y="32" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="Chc-16-0C7"/>
+                                    <constraint firstAttribute="width" constant="20" id="Jlr-DQ-j2N">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="Rew-Cx-s4R" secondAttribute="height" multiplier="1:1" id="ZFf-4l-bvv"/>
                                 </constraints>
                                 <state key="normal" image="settings-work-tool"/>
@@ -41,25 +43,32 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Uac-XN-310">
-                                <rect key="frame" x="57" y="119" width="300" height="707"/>
+                                <rect key="frame" x="10" y="65" width="300" height="345"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic-Tac-Toe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjU-Pm-Q9c">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic-Tac-Toe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjU-Pm-Q9c">
                                         <rect key="frame" x="57" y="0.0" width="186" height="39.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39.5" id="Jj6-jT-vKp"/>
+                                            <constraint firstAttribute="height" constant="39.5" id="Jj6-jT-vKp">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                            </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="44"/>
+                                        </variation>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-HD-3Kv">
-                                        <rect key="frame" x="0.0" y="79.5" width="300" height="539.5"/>
+                                        <rect key="frame" x="0.0" y="79.5" width="300" height="177.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs8-sr-Z8u" customClass="CustomButton" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="659" width="200" height="48"/>
+                                        <rect key="frame" x="50" y="297" width="200" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="3Qu-Lm-W1x"/>
+                                            <constraint firstAttribute="height" constant="48" id="3Qu-Lm-W1x">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="72"/>
+                                            </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                         <state key="normal" title="Play">
@@ -70,26 +79,61 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
+                                        </variation>
                                         <connections>
                                             <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzy-xs-8Vr"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Xs8-sr-Z8u" firstAttribute="leading" secondItem="Uac-XN-310" secondAttribute="leading" constant="50" id="15H-aU-NaO"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xs8-sr-Z8u" secondAttribute="trailing" constant="50" id="JPh-B7-bl2"/>
+                                    <constraint firstItem="Xs8-sr-Z8u" firstAttribute="leading" secondItem="Uac-XN-310" secondAttribute="leading" constant="50" id="15H-aU-NaO">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="cNv-HD-3Kv" firstAttribute="leading" secondItem="Uac-XN-310" secondAttribute="leading" id="B2e-hE-WIk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xs8-sr-Z8u" secondAttribute="trailing" constant="50" id="JPh-B7-bl2">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="cNv-HD-3Kv" secondAttribute="trailing" id="ahM-wd-U4Q"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="B2e-hE-WIk"/>
+                                        <exclude reference="ahM-wd-U4Q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="B2e-hE-WIk"/>
+                                        <include reference="ahM-wd-U4Q"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.13333333333333333" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Uac-XN-310" secondAttribute="bottom" constant="70" id="6wy-IU-FUr"/>
-                            <constraint firstItem="Uac-XN-310" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="MCU-bX-Q8o"/>
-                            <constraint firstItem="Rew-Cx-s4R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="O2O-K6-CEY"/>
+                            <constraint firstItem="Uac-XN-310" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="250" id="Hmd-J7-x1a"/>
+                            <constraint firstItem="Uac-XN-310" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="MCU-bX-Q8o"/>
+                            <constraint firstItem="Rew-Cx-s4R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="O2O-K6-CEY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uac-XN-310" secondAttribute="trailing" constant="250" id="Sz0-YH-TeP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rew-Cx-s4R" secondAttribute="trailing" constant="20" id="ihZ-UF-ZMg"/>
                             <constraint firstItem="Uac-XN-310" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zmt-U9-GLf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Sz0-YH-TeP"/>
+                                <exclude reference="Hmd-J7-x1a"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="Sz0-YH-TeP"/>
+                                <include reference="Hmd-J7-x1a"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="KZk-0s-0se" kind="show" identifier="ToGame" id="Uzd-ZS-u0h"/>
@@ -105,39 +149,56 @@
             <objects>
                 <viewController id="s70-Au-RJP" customClass="CreditsController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3zP-kf-FrZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obs-eA-duh">
-                                <rect key="frame" x="30" y="157" width="354" height="100"/>
+                                <rect key="frame" x="30" y="132" width="260" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meitar Basson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-XY-hRq">
-                                        <rect key="frame" x="112" y="14" width="130" height="22"/>
+                                        <rect key="frame" x="65" y="14" width="130" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="36"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lead Game Developer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zy-Gm-Plg">
-                                        <rect key="frame" x="110.5" y="54" width="133" height="15"/>
+                                        <rect key="frame" x="64" y="54" width="132.5" height="15"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="24"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bLB-XY-hRq" firstAttribute="centerX" secondItem="obs-eA-duh" secondAttribute="centerX" id="9er-1S-oPj"/>
-                                    <constraint firstItem="bLB-XY-hRq" firstAttribute="top" secondItem="obs-eA-duh" secondAttribute="top" constant="14" id="Uu0-kT-K0e"/>
-                                    <constraint firstAttribute="height" constant="100" id="f9m-os-1Be"/>
+                                    <constraint firstItem="bLB-XY-hRq" firstAttribute="top" secondItem="obs-eA-duh" secondAttribute="top" constant="14" id="Uu0-kT-K0e">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="100" id="f9m-os-1Be">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                    </constraint>
                                     <constraint firstItem="2zy-Gm-Plg" firstAttribute="top" secondItem="bLB-XY-hRq" secondAttribute="bottom" constant="18" id="pJO-jy-Xbp"/>
                                     <constraint firstItem="2zy-Gm-Plg" firstAttribute="centerX" secondItem="obs-eA-duh" secondAttribute="centerX" id="wgC-xc-9vI"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="f9m-os-1Be"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbR-O5-97X">
-                                <rect key="frame" x="369" y="52" width="25" height="25"/>
+                                <rect key="frame" x="280" y="32" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="DdR-wf-6re"/>
                                     <constraint firstAttribute="width" secondItem="sbR-O5-97X" secondAttribute="height" multiplier="1:1" id="bK3-v9-Kdk"/>
+                                    <constraint firstAttribute="width" constant="20" id="lPT-eh-kFl">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" image="X"/>
                                 <connections>
@@ -145,39 +206,53 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivW-wN-izD">
-                                <rect key="frame" x="30" y="317" width="354" height="100"/>
+                                <rect key="frame" x="30" y="292" width="260" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Musa Farouk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QR-ok-yFe">
-                                        <rect key="frame" x="118" y="14" width="118" height="22"/>
+                                        <rect key="frame" x="71" y="14" width="118" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="36"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI/UX Designer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PT-mi-knk">
-                                        <rect key="frame" x="131" y="54" width="92" height="15"/>
+                                        <rect key="frame" x="84.5" y="54" width="91.5" height="15"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="24"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="0PT-mi-knk" firstAttribute="top" secondItem="5QR-ok-yFe" secondAttribute="bottom" constant="18" id="9DE-tk-jU8"/>
                                     <constraint firstItem="0PT-mi-knk" firstAttribute="centerX" secondItem="ivW-wN-izD" secondAttribute="centerX" id="Aye-Ze-eY6"/>
-                                    <constraint firstAttribute="height" constant="100" id="SPM-I7-7py"/>
-                                    <constraint firstItem="5QR-ok-yFe" firstAttribute="top" secondItem="ivW-wN-izD" secondAttribute="top" constant="14" id="Y21-SZ-2p6"/>
+                                    <constraint firstAttribute="height" constant="100" id="SPM-I7-7py">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                    </constraint>
+                                    <constraint firstItem="5QR-ok-yFe" firstAttribute="top" secondItem="ivW-wN-izD" secondAttribute="top" constant="14" id="Y21-SZ-2p6">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                    </constraint>
                                     <constraint firstItem="5QR-ok-yFe" firstAttribute="centerX" secondItem="ivW-wN-izD" secondAttribute="centerX" id="aeu-Ze-4fq"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.1333333333" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="r69-8H-uEY" firstAttribute="trailing" secondItem="obs-eA-duh" secondAttribute="trailing" constant="30" id="2kh-5L-zv4"/>
+                            <constraint firstItem="r69-8H-uEY" firstAttribute="trailing" secondItem="obs-eA-duh" secondAttribute="trailing" constant="30" id="2kh-5L-zv4">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="ivW-wN-izD" firstAttribute="width" secondItem="obs-eA-duh" secondAttribute="width" id="7SU-N3-Qxi"/>
                             <constraint firstItem="ivW-wN-izD" firstAttribute="top" secondItem="obs-eA-duh" secondAttribute="bottom" constant="60" id="Hy6-SL-X6k"/>
-                            <constraint firstItem="sbR-O5-97X" firstAttribute="top" secondItem="r69-8H-uEY" secondAttribute="top" constant="8" id="NZS-Z7-QK9"/>
+                            <constraint firstItem="sbR-O5-97X" firstAttribute="top" secondItem="r69-8H-uEY" secondAttribute="top" constant="12" id="NZS-Z7-QK9"/>
                             <constraint firstItem="ivW-wN-izD" firstAttribute="centerX" secondItem="3zP-kf-FrZ" secondAttribute="centerX" id="TL1-Hl-Rya"/>
-                            <constraint firstItem="obs-eA-duh" firstAttribute="leading" secondItem="r69-8H-uEY" secondAttribute="leading" constant="30" id="aI5-QD-VbO"/>
+                            <constraint firstItem="obs-eA-duh" firstAttribute="leading" secondItem="r69-8H-uEY" secondAttribute="leading" constant="30" id="aI5-QD-VbO">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="obs-eA-duh" firstAttribute="top" secondItem="sbR-O5-97X" secondAttribute="bottom" constant="80" id="aJW-P6-oE5"/>
                             <constraint firstItem="r69-8H-uEY" firstAttribute="trailing" secondItem="sbR-O5-97X" secondAttribute="trailing" constant="20" id="zKh-gm-BaR"/>
                         </constraints>
@@ -193,33 +268,42 @@
             <objects>
                 <viewController id="KZk-0s-0se" customClass="GameController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u36-Ty-M5o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="WP6-ZU-6Sq" userLabel="Top Stack">
-                                <rect key="frame" x="20" y="94" width="374" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WP6-ZU-6Sq" userLabel="Top Stack">
+                                <rect key="frame" x="20" y="70" width="280" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuQ-Of-bbh">
-                                        <rect key="frame" x="0.0" y="0.0" width="164.5" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-user-blue" translatesAutoresizingMaskIntoConstraints="NO" id="9Sk-tO-wRo">
                                                 <rect key="frame" x="8" y="4" width="31" height="27"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="kwp-vP-VuY"/>
-                                                    <constraint firstAttribute="width" constant="31" id="qHf-b1-GR2"/>
+                                                    <constraint firstAttribute="height" constant="27" id="kwp-vP-VuY">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="54"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="31" id="qHf-b1-GR2">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="62"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lv2-Zz-t7s">
-                                                <rect key="frame" x="51" y="8" width="101.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lv2-Zz-t7s">
+                                                <rect key="frame" x="51" y="8" width="62" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
+                                                </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-fB-IUg" userLabel="Left Indicator" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="46" width="148.5" height="5"/>
+                                                <rect key="frame" x="8" y="46" width="109" height="5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="5" id="5hT-gD-LDS"/>
+                                                    <constraint firstAttribute="height" constant="5" id="5hT-gD-LDS">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -242,26 +326,35 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4n-8b-liO">
-                                        <rect key="frame" x="209.5" y="0.0" width="164.5" height="80"/>
+                                        <rect key="frame" x="155" y="0.0" width="125" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-user-red" translatesAutoresizingMaskIntoConstraints="NO" id="RIC-zb-Jhw">
                                                 <rect key="frame" x="8" y="4" width="31" height="27"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="31" id="FJQ-9D-hgF"/>
-                                                    <constraint firstAttribute="height" constant="27" id="FeN-Ac-oFf"/>
+                                                    <constraint firstAttribute="width" constant="31" id="FJQ-9D-hgF">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="62"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="27" id="FeN-Ac-oFf">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="54"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NAS-DA-shy">
-                                                <rect key="frame" x="51" y="8" width="101.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAS-DA-shy">
+                                                <rect key="frame" x="51" y="8" width="62" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
+                                                </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-bq-O3m" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="46" width="148.5" height="5"/>
+                                                <rect key="frame" x="8" y="46" width="109" height="5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="5" id="8WC-ib-hRe"/>
+                                                    <constraint firstAttribute="height" constant="5" id="8WC-ib-hRe">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -285,51 +378,61 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="WYw-wV-i6h"/>
+                                    <constraint firstAttribute="height" constant="80" id="WYw-wV-i6h">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="120"/>
+                                    </constraint>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ks-8K-Jgf" userLabel="Board" customClass="CustomView" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                <rect key="frame" x="30" y="204" width="354" height="498"/>
+                                <rect key="frame" x="30" y="180" width="260" height="152"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-uY-S6p" userLabel="Top-row">
-                                        <rect key="frame" x="0.0" y="163" width="354" height="3"/>
+                                        <rect key="frame" x="0.0" y="47.5" width="260" height="3"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="VtK-jU-w90"/>
+                                            <constraint firstAttribute="height" constant="3" id="VtK-jU-w90">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEE-Pj-2Mc" userLabel="Bottom-row">
-                                        <rect key="frame" x="0.0" y="329" width="354" height="3"/>
+                                        <rect key="frame" x="0.0" y="98.5" width="260" height="3"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="Jok-yL-qcv"/>
+                                            <constraint firstAttribute="height" constant="3" id="Jok-yL-qcv">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84X-dK-Zr4" userLabel="Left-column">
-                                        <rect key="frame" x="115" y="0.0" width="3" height="498"/>
+                                        <rect key="frame" x="83.5" y="0.0" width="3" height="152"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="3" id="T3P-MN-Bsc"/>
+                                            <constraint firstAttribute="width" constant="3" id="T3P-MN-Bsc">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmC-03-ER8" userLabel="Right-column">
-                                        <rect key="frame" x="233" y="0.0" width="3" height="498"/>
+                                        <rect key="frame" x="170.5" y="0.0" width="3" height="152"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="3" id="Z95-0f-4uO"/>
+                                            <constraint firstAttribute="width" constant="3" id="Z95-0f-4uO">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-lv-nng" userLabel="Top-L">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="163"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="47.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-2J-Kj1" userLabel="Top-L">
-                                                <rect key="frame" x="34.5" y="58.5" width="46" height="46"/>
+                                                <rect key="frame" x="25" y="7" width="33.5" height="33.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="t7F-2J-Kj1" secondAttribute="height" id="FPc-Tp-t8s"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDY-QE-3eO" userLabel="Top-L">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="47.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="jFa-dX-DSX"/>
                                                 </connections>
@@ -346,16 +449,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJH-kg-suL" userLabel="Top-M">
-                                        <rect key="frame" x="118" y="0.0" width="115" height="163"/>
+                                        <rect key="frame" x="86.5" y="0.0" width="84" height="47.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="77H-f8-XVF" userLabel="Top-M">
-                                                <rect key="frame" x="34.5" y="58.5" width="46" height="46"/>
+                                                <rect key="frame" x="25.5" y="7" width="33" height="33.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="77H-f8-XVF" secondAttribute="height" id="487-gT-xol"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd4-cX-2Xp" userLabel="Top-M">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="47.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="aWc-Rv-jP6"/>
                                                 </connections>
@@ -373,16 +476,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-cA-cyy" userLabel="Top-R">
-                                        <rect key="frame" x="236" y="0.0" width="118" height="163"/>
+                                        <rect key="frame" x="173.5" y="0.0" width="86.5" height="47.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ix9-W2-pg2" userLabel="Top-R">
-                                                <rect key="frame" x="35.5" y="58" width="47" height="47"/>
+                                                <rect key="frame" x="26" y="6.5" width="34.5" height="34.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ix9-W2-pg2" secondAttribute="height" id="ypN-zf-R2G"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzR-LH-9qg" userLabel="Top-R">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="47.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="MeO-Sk-Ny5"/>
                                                 </connections>
@@ -400,16 +503,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-q9-H0w" userLabel="Middle-L">
-                                        <rect key="frame" x="0.0" y="166" width="115" height="163"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="83.5" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDd-ic-lgK" userLabel="Middle-L">
-                                                <rect key="frame" x="34.5" y="58.5" width="46" height="46"/>
+                                                <rect key="frame" x="25" y="7.5" width="33.5" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VDd-ic-lgK" secondAttribute="height" id="GvV-Cv-emo"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as9-Le-u4o" userLabel="Middle-L">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="48"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="RO8-zB-sHu"/>
                                                 </connections>
@@ -427,16 +530,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ix8-fh-thK" userLabel="Middle-M">
-                                        <rect key="frame" x="118" y="166" width="115" height="163"/>
+                                        <rect key="frame" x="86.5" y="50.5" width="84" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-IR-57J" userLabel="Middle-M">
-                                                <rect key="frame" x="34.5" y="58.5" width="46" height="46"/>
+                                                <rect key="frame" x="25.5" y="7.5" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0bS-IR-57J" secondAttribute="height" id="Res-q0-m55"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N56-jz-iVJ" userLabel="Middle-M">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="48"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="62v-mc-uDO"/>
                                                 </connections>
@@ -454,16 +557,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIN-cV-mSc" userLabel="Middle-R">
-                                        <rect key="frame" x="236" y="166" width="118" height="163"/>
+                                        <rect key="frame" x="173.5" y="50.5" width="86.5" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQV-tw-BlY" userLabel="Middle-R">
-                                                <rect key="frame" x="35.5" y="58" width="47" height="47"/>
+                                                <rect key="frame" x="26" y="6.5" width="34.5" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sQV-tw-BlY" secondAttribute="height" id="SCh-Lr-uDk"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HT-qH-zCX" userLabel="Middle-R">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="48"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="ng0-fL-HYh"/>
                                                 </connections>
@@ -481,16 +584,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2I-Fd-Ny1" userLabel="Bottom-L">
-                                        <rect key="frame" x="0.0" y="332" width="115" height="166"/>
+                                        <rect key="frame" x="0.0" y="101.5" width="83.5" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6jR-18-vQA" userLabel="Bottom-L">
-                                                <rect key="frame" x="34.5" y="60" width="46" height="46"/>
+                                                <rect key="frame" x="25" y="8.5" width="33.5" height="33.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="6jR-18-vQA" secondAttribute="height" id="XZO-vj-8TT"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-gs-HhB">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="166"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="50.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="ZeT-fR-j6t"/>
                                                 </connections>
@@ -508,16 +611,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOS-Pa-51V" userLabel="Bottom-M">
-                                        <rect key="frame" x="118" y="332" width="115" height="166"/>
+                                        <rect key="frame" x="86.5" y="101.5" width="84" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ue-hH-tXn" userLabel="Bottom-M">
-                                                <rect key="frame" x="34.5" y="60" width="46" height="46"/>
+                                                <rect key="frame" x="25.5" y="8.5" width="33" height="33.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="6ue-hH-tXn" secondAttribute="height" id="UNc-dO-Tc1"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4Y-Wn-HW9">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="166"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="50.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="pF9-9N-299"/>
                                                 </connections>
@@ -535,16 +638,16 @@
                                         </constraints>
                                     </view>
                                     <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9C-cL-DBT" userLabel="Bottom-R">
-                                        <rect key="frame" x="236" y="332" width="118" height="166"/>
+                                        <rect key="frame" x="173.5" y="101.5" width="86.5" height="50.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ACW-Et-vde" userLabel="Bottom-R">
-                                                <rect key="frame" x="35.5" y="59.5" width="47" height="47"/>
+                                                <rect key="frame" x="26" y="8" width="34.5" height="34.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ACW-Et-vde" secondAttribute="height" id="QGJ-LF-1hC"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqw-EV-LUp">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="166"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="50.5"/>
                                                 <connections>
                                                     <action selector="boardTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="Djm-Kc-XmH"/>
                                                 </connections>
@@ -620,15 +723,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="O94-d6-K9l" userLabel="Bottom Stack">
-                                <rect key="frame" x="45" y="752" width="324" height="60"/>
+                                <rect key="frame" x="45" y="382" width="230" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi2-F4-mMc" customClass="CustomButton" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="akV-sb-uMY"/>
+                                            <constraint firstAttribute="height" constant="48" id="akV-sb-uMY">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                            </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                         <state key="normal" title="Exit">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -637,17 +742,22 @@
                                                 <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="ExitButtonTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="a5T-hU-SsR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhh-cB-hxS" customClass="CustomButton" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                        <rect key="frame" x="184.5" y="0.0" width="139.5" height="60"/>
+                                        <rect key="frame" x="137.5" y="0.0" width="92.5" height="48"/>
                                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Jc7-PT-S9n"/>
+                                            <constraint firstAttribute="height" constant="48" id="Jc7-PT-S9n">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                            </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                         <state key="normal" title="Undo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -656,13 +766,18 @@
                                                 <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="UndoButtonTapped:" destination="KZk-0s-0se" eventType="touchUpInside" id="7mY-kL-wZn"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="aCS-Hu-bjg"/>
+                                    <constraint firstAttribute="height" constant="48" id="aCS-Hu-bjg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -717,28 +832,31 @@
             <objects>
                 <viewController id="w5Y-QZ-XNi" customClass="GameOverController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfW-UZ-Quc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="c26-Em-Aib">
-                                <rect key="frame" x="60" y="84" width="294" height="738"/>
+                                <rect key="frame" x="13" y="60" width="294" height="380"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXG-gg-tT6">
-                                        <rect key="frame" x="26.5" y="0.0" width="241.5" height="44.5"/>
+                                        <rect key="frame" x="26.5" y="0.0" width="241.5" height="24"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="62"/>
+                                        </variation>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-user-blue" translatesAutoresizingMaskIntoConstraints="NO" id="40l-aB-KS9">
-                                        <rect key="frame" x="0.0" y="119.5" width="294" height="393.5"/>
+                                        <rect key="frame" x="0.0" y="99" width="294" height="80"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gGJ-q2-wJI">
-                                        <rect key="frame" x="23" y="588" width="248" height="150"/>
+                                        <rect key="frame" x="51" y="254" width="192" height="126"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGW-XD-LPR" customClass="CustomButton" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="248" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="48"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                 <state key="normal" title="Play Again">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -747,17 +865,22 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="playAgainButtonPressed:" destination="w5Y-QZ-XNi" eventType="touchUpInside" id="0Pa-ai-oeM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Xy-gQ2" customClass="CustomButton" customModule="Tic_Tac_Toe" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="90" width="248" height="60"/>
+                                                <rect key="frame" x="0.0" y="78" width="192" height="48"/>
                                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="ZmI-aL-pK8"/>
+                                                    <constraint firstAttribute="height" constant="48" id="ZmI-aL-pK8">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                                    </constraint>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                 <state key="normal" title="Home">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -766,6 +889,9 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="H4h-ZN-b5A" kind="unwind" unwindAction="unwindToRoot:" id="Zzp-GZ-goY"/>
                                                 </connections>
@@ -773,6 +899,22 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="40l-aB-KS9" firstAttribute="leading" secondItem="c26-Em-Aib" secondAttribute="leading" constant="100" id="72X-yh-UQ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="40l-aB-KS9" secondAttribute="trailing" constant="100" id="Gsf-4P-vfa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="72X-yh-UQ9"/>
+                                        <exclude reference="Gsf-4P-vfa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="72X-yh-UQ9"/>
+                                        <include reference="Gsf-4P-vfa"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.1333333333" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

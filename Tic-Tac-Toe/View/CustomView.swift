@@ -23,7 +23,7 @@ class CustomView: UIView {
             layer.shadowColor = #colorLiteral(red: 0.9607843137, green: 0.6509803922, blue: 0.137254902, alpha: 1)
             layer.shadowOpacity = 0.9
             layer.shadowOffset = CGSize(width: 0, height: 0)
-            layer.shadowRadius = 4
+            layer.shadowRadius = 5.0
             layer.masksToBounds = false
         }
     }
