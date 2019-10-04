@@ -44,4 +44,12 @@ class GameOverController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Detect who won
+        if segue.destination is GameController {
+            let gameController = segue.destination as? GameController
+            gameController?.reset()
+        }
+    }
+    
 }

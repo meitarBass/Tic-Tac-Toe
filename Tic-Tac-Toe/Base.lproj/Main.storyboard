@@ -251,7 +251,7 @@
                                                     <constraint firstAttribute="height" constant="27" id="FeN-Ac-oFf"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NAS-DA-shy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NAS-DA-shy">
                                                 <rect key="frame" x="51" y="8" width="101.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -695,6 +695,16 @@
                         <outletCollection property="boardImageCollection" destination="6jR-18-vQA" collectionClass="NSMutableArray" id="0B2-Rf-ZOb"/>
                         <outletCollection property="boardImageCollection" destination="6ue-hH-tXn" collectionClass="NSMutableArray" id="Shr-t1-a5g"/>
                         <outletCollection property="boardImageCollection" destination="ACW-Et-vde" collectionClass="NSMutableArray" id="Qbw-xt-Z6V"/>
+                        <outletCollection property="buttonsCollection" destination="wDY-QE-3eO" collectionClass="NSMutableArray" id="WpL-UZ-Lte"/>
+                        <outletCollection property="buttonsCollection" destination="nd4-cX-2Xp" collectionClass="NSMutableArray" id="vKE-En-ATA"/>
+                        <outletCollection property="buttonsCollection" destination="kzR-LH-9qg" collectionClass="NSMutableArray" id="B5a-iJ-jag"/>
+                        <outletCollection property="buttonsCollection" destination="as9-Le-u4o" collectionClass="NSMutableArray" id="U09-0V-KNS"/>
+                        <outletCollection property="buttonsCollection" destination="N56-jz-iVJ" collectionClass="NSMutableArray" id="fAE-1W-Bg4"/>
+                        <outletCollection property="buttonsCollection" destination="1HT-qH-zCX" collectionClass="NSMutableArray" id="X4B-yR-J4k"/>
+                        <outletCollection property="buttonsCollection" destination="mJc-gs-HhB" collectionClass="NSMutableArray" id="WZJ-0e-Pnv"/>
+                        <outletCollection property="buttonsCollection" destination="N4Y-Wn-HW9" collectionClass="NSMutableArray" id="J46-Dc-MTD"/>
+                        <outletCollection property="buttonsCollection" destination="zqw-EV-LUp" collectionClass="NSMutableArray" id="ZzL-9O-FXF"/>
+                        <outletCollection property="buttonsCollection" destination="yhh-cB-hxS" collectionClass="NSMutableArray" id="11q-E2-Hwz"/>
                         <segue destination="w5Y-QZ-XNi" kind="show" identifier="ToGameOver" id="vhh-sm-DnA"/>
                     </connections>
                 </viewController>
