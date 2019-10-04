@@ -15,6 +15,8 @@ class CreditsController: UIViewController {
         
     }
     
+    // MARK: Actions
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: {})
     }

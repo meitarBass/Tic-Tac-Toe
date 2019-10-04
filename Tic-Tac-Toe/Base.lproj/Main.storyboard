@@ -767,7 +767,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="homeButtonPressed:" destination="w5Y-QZ-XNi" eventType="touchUpInside" id="Jbn-bd-d0Z"/>
                                                     <segue destination="H4h-ZN-b5A" kind="unwind" unwindAction="unwindToRoot:" id="Zzp-GZ-goY"/>
                                                 </connections>
                                             </button>

@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: Actions
+    
     @IBAction func creditsButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ToCredits", sender: nil)
     }
@@ -24,6 +26,8 @@ class ViewController: UIViewController {
     @IBAction func playButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ToGame", sender: nil)
     }
+    
+    // MARK: Unwind from GameOverController
     
     @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {}
     

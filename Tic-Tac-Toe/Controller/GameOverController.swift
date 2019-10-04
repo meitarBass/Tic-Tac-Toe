@@ -10,10 +10,12 @@ import UIKit
 
 class GameOverController: UIViewController {
     
-    var winner: WINNER!
-
+    // MARK: Outlets
     @IBOutlet weak var winnerImage: UIImageView!
     @IBOutlet weak var winnerLabel: UILabel!
+    
+    // MARK: Variables
+    var winner: WINNER!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +38,11 @@ class GameOverController: UIViewController {
         }
     }
     
+    // MARK: Actions
+    
     @IBAction func playAgainButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: {})
     }
     
-    @IBAction func homeButtonPressed(_ sender: Any) {
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Detect who won
-        if segue.destination is GameController {
-            let gameController = segue.destination as? GameController
-            gameController?.reset()
-        }
-    }
-    
+    // MARK: Home button works with unwindSegue
 }

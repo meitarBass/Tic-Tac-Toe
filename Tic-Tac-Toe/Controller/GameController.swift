@@ -42,26 +42,7 @@ class GameController: UIViewController {
         reset()
     }
     
-    // MARK: Computer Play
-    
-    func playComputer(playingShape: Shape) {
-        let bestPlay = checkBestPlay(board: currentBoard, shape: playingShape)
-        let imageIndex = bestPlay.0 * 3 + bestPlay.1
-        
-        // Repeating this part in the player play also, need to make it a function
-        currentBoard[bestPlay.0][bestPlay.1] = playingShape
-        boardImageCollection[imageIndex].image = UIImage(named: playingShape.rawValue.capitalized)
-        lastMove.append((bestPlay.0, bestPlay.1))
-        switch getState(board: currentBoard, playerShape: playingShape) {
-        case .PLAYING_USER_WON:
-            winner = .PLAYER_2
-            gameDone()
-        case .TIE:
-            winner = .TIE
-            gameDone()
-        case .INCOMPLETE: break
-        }
-    }
+    // MARK: Actions
     
     // MARK: Segues and transition between controllers
     @IBAction func ExitButtonTapped(_ sender: UIButton) {
@@ -107,6 +88,53 @@ class GameController: UIViewController {
     
     }
     
+    // MARK: Computer Play
+    
+    func playComputer(playingShape: Shape) {
+        let bestPlay = checkBestPlay(board: currentBoard, shape: playingShape)
+        let imageIndex = bestPlay.0 * 3 + bestPlay.1
+        
+        // Repeating this part in the player play also, need to make it a function
+        currentBoard[bestPlay.0][bestPlay.1] = playingShape
+        boardImageCollection[imageIndex].image = UIImage(named: playingShape.rawValue.capitalized)
+        lastMove.append((bestPlay.0, bestPlay.1))
+        switch getState(board: currentBoard, playerShape: playingShape) {
+        case .PLAYING_USER_WON:
+            winner = .PLAYER_2
+            gameDone()
+        case .TIE:
+            winner = .TIE
+            gameDone()
+        case .INCOMPLETE: break
+        }
+    }
+    
+    // MARK: Undo function
+    
+    func undoLastMove() {
+        if lastMove.count > 1 {
+            for _ in 0..<2 {
+                let move = lastMove.last!
+                let imageIndex = move.0 * 3 + move.1
+                currentBoard[move.0][move.1] = .E
+                boardImageCollection[imageIndex].image = UIImage(named: "")
+                playingShape = .X
+                lastMove.removeLast()
+            }
+        }
+    }
+    
+    // MARK: Disable or Enable button
+    // Disable on computer's turn
+    // Enable on user's turn
+    
+    func disableEnableButtons() {
+        for eachBtn in buttonsCollection {
+            eachBtn.isEnabled = !eachBtn.isEnabled
+        }
+    }
+    
+    // MARK: Game done functions
     
     func gameDone() {
         performSegue(withIdentifier: "ToGameOver", sender: nil)
@@ -130,25 +158,6 @@ class GameController: UIViewController {
         rightIndicator.layer.shadowOpacity = 0.0
         for image in boardImageCollection {
             image.image = UIImage(named: "")
-        }
-    }
-    
-    func undoLastMove() {
-        if lastMove.count > 1 {
-            for _ in 0..<2 {
-                let move = lastMove.last!
-                let imageIndex = move.0 * 3 + move.1
-                currentBoard[move.0][move.1] = .E
-                boardImageCollection[imageIndex].image = UIImage(named: "")
-                playingShape = .X
-                lastMove.removeLast()
-            }
-        }
-    }
-    
-    func disableEnableButtons() {
-        for eachBtn in buttonsCollection {
-            eachBtn.isEnabled = !eachBtn.isEnabled
         }
     }
 
