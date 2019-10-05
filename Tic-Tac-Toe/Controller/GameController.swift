@@ -38,13 +38,9 @@ class GameController: UIViewController {
         }))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        reset()
-    }
-    
     // MARK: Actions
     
-    // MARK: Segues and transition between controllers
+    // Segues and transition between controllers
     @IBAction func ExitButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: {})
     }
@@ -52,7 +48,9 @@ class GameController: UIViewController {
     // Undo button, need to change functionallity
     @IBAction func UndoButtonTapped(_ sender: UIButton) {
         // act like game done for now
-        self.present(alert, animated: true)
+        if lastMove.count > 1 {
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func boardTapped(_ sender: UIButton) {
@@ -142,8 +140,9 @@ class GameController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Detect who won
+        self.reset()
         if segue.destination is GameOverController {
-            alert.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: {})
             let gameOverController = segue.destination as? GameOverController
             gameOverController?.winner = winner
         }
@@ -160,6 +159,5 @@ class GameController: UIViewController {
             image.image = UIImage(named: "")
         }
     }
-
 
 }
