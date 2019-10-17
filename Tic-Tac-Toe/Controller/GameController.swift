@@ -140,13 +140,12 @@ class GameController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Detect who won
-        self.reset()
         if segue.destination is GameOverController {
             alert.dismiss(animated: true, completion: {})
             let gameOverController = segue.destination as? GameOverController
             gameOverController?.winner = winner
         }
-        
+        self.reset()
     }
     
     func reset() {
